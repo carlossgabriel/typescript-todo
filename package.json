@@ -1,0 +1,22 @@
+{
+  "name": "ts-learning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.1.5",
+    "lowdb": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.1.1",
+    "@types/lowdb": "^1.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "typescript": "^4.4.3"
+  }
+}
