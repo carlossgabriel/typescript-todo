@@ -4,7 +4,11 @@ import * as lowdb from 'lowdb'
 import * as FileSync from 'lowdb/adapters/FileSync'
 
 type schemaType = {
-    tasks: { id: number; task: string; complete: boolean; }[]
+  tasks: {
+    id: number;
+    task: string;
+    complete: boolean;
+  }[]
 };
 
 export class JsonTodoCollection extends TodoCollection {
@@ -15,8 +19,15 @@ export class JsonTodoCollection extends TodoCollection {
       this.database = lowdb(new FileSync('Todos.json'))
       if (this.database.has('tasks').value()) {
         const dbItems = this.database.get('tasks').value()
-        dbItems.forEach(item => this.itemMap.set(item.id,
-          new TodoItem(item.id, item.task, item.complete)))
+        dbItems.forEach(
+          item => this.itemMap.set(
+            item.id,
+            new TodoItem(
+              item.id,
+              item.task,
+              item.complete)
+          )
+        )
       } else {
         this.database.set('tasks', todoItems).write()
         todoItems.forEach(item => this.itemMap.set(item.id, item))
